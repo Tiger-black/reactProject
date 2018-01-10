@@ -2,11 +2,17 @@ import React from 'react'
 import Header from './components/header'
 import Progress from './components/progress'
 import Player from './page/player';
+import MusicList from './page/musicList';
+import { MUSIC_LIST } from './config/musiclist'
 
 let duration = null;
 class Root extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            musiclist: MUSIC_LIST,
+            currentMusicItem: MUSIC_LIST[0]
+        };
     }   
     componentDidMount(){
         $("#player").jPlayer({
@@ -27,10 +33,16 @@ class Root extends React.Component {
         return (
             <div>
                 <Header />
-                <Player />
+                <MusicList 
+                    currentMusicItem = {this.state.currentMusicItem} 
+                    musicList={this.state.musiclist} 
+                />
             </div>
         )
     }
 };
-
+{/* <div>
+    <Header />
+    <Player currentMusicItem={this.state.currentMusicItem} />
+</div> */}
 export default Root;

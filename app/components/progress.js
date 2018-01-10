@@ -7,7 +7,7 @@ class Progress extends React.Component {
         super(props);
         this.changeProgress = this.changeProgress.bind(this);
         this.state = {
-            barcolor: '#2f9842'
+            barcolor: this.props.barcolor ||  '#2f9842'
         };
     }
     
