@@ -55,3 +55,54 @@
     babel - loader 将es6转为es5的语法
     css - loader 
     less - loader 
+
+五 webpack dev server 搭建开发环境
+    webpack dev server是一个小型的Node Express服务器，它为通过webpack打包生成的资源文件提供web服务
+    1.搭建本地服务器
+    2.自动刷新
+    server.js
+
+
+
+2 react开发
+    两种开发思路
+    1.从上至下 先写大配置在写里面小的组件
+    2.从下至上 先写里面每一个小的组件然后再把组件拼接起来形成一个页面
+
+    我们用第二种 时候多人开发 自己维护自己的组件
+
+    使用jpayer插件实现音乐播放
+
+    当页面跳出需要解绑已绑定的事件
+    componentWillUnmount() {
+        $("#player").unbind($.jPlayer.event.timeupdate);
+    }
+
+    es6的写法 模板表达式
+    `{$this.props.progress}%`
+
+    要想使用refs 
+    你在 changeProgress 里面使用this的时候一定要在 constructor 里面绑定，不然找不到this
+    constructor(props) {
+        super(props);
+        this.changeProgress = this.changeProgress.bind(this);
+    }
+
+    changeProgress(e) {
+        let progressBar = this.refs.progressBar;
+        console.log(progressBar)
+    }
+
+    render() {
+        return (
+            <div className="components-progress" ref="progressBar" onClick={this.changeProgress}>
+                <div className="progress" style={{ width: `${this.props.progress}%`}} > </div>
+            </div>
+        )
+    }
+
+组件直接的通讯
+    1、利用props从父组件传递到子组件中
+    2、从子组件把数据回传给父组件 简单的方法回调函数
+    3、两个没有关系子组件 互相传递数据 需要把数据回传给他们统一的父组件 再由父组件派发；
+        如果层级关系比较深这种情况相当麻烦可以用事件订阅的方法解决
