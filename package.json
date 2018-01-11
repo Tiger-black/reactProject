@@ -22,11 +22,13 @@
   },
   "homepage": "https://github.com/Tiger-black/reactProject#readme",
   "dependencies": {
-    "react": "^16.2.0",
+    "babel-preset-stage-0": "^6.24.1",
     "pubsub-js": "^1.5.8",
+    "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-hot-loader": "^3.1.3",
-    "react-router": "^4.2.0"
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
