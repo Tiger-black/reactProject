@@ -427,7 +427,7 @@ webpack可以说是一个模块管理器
         // The Roster component matches one of two different routes
         // depending on the full pathname
         const Roster = () => (
-        <Switch>
+        <Switch> 
             <Route exact path='/roster' component={FullRoster}/>
             <Route path='/roster/:number' component={Player}/>
         </Switch>
@@ -501,3 +501,6 @@ webpack可以说是一个模块管理器
     当然，还有一些我们没有涉及的组件。
     所幸React Router拥有优质的文档，你可以查看并从中了解更多的信息。文档也提供一系列的例子与源代码。
     https://reacttraining.com/react-router/web/guides/quick-start
+
+
+    一个加入的redux的项目https://github.com/rainJJ/react-music-player/blob/master/src/components/Player/index.jsx
